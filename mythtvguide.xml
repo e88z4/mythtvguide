@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mythtvguide" default="all">
+  
+  
+  <property file="mythtvguide.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8_(1)" value="${jdk.home.1.8_(1)}/bin"/>
+  <path id="jdk.classpath.1.8_(1)">
+    <fileset dir="${jdk.home.1.8_(1)}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8_(1)}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8_(1)}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8_(1)"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_classworlds:classworlds:1.1-alpha-2.classpath">
+    <pathelement location="${path.variable.maven_repository}/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-lang:commons-lang:2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-lang/commons-lang/2.1/commons-lang-2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_junit:junit:3.8.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/3.8.1/junit-3.8.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_mysql:mysql-connector-java:5.1.37.classpath">
+    <pathelement location="${path.variable.maven_repository}/mysql/mysql-connector-java/5.1.37/mysql-connector-java-5.1.37.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.sf.squirrel-sql.thirdparty-non-maven:ostermiller-bte:1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/sf/squirrel-sql/thirdparty-non-maven/ostermiller-bte/1.6/ostermiller-bte-1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.sf.squirrel-sql.thirdparty-non-maven:ostermiller-syntax:1.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/sf/squirrel-sql/thirdparty-non-maven/ostermiller-syntax/1.1.1/ostermiller-syntax-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.ant:ant-launcher:1.7.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.ant:ant:1.7.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/ant/ant/1.7.1/ant-1.7.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.logging.log4j:log4j-api:2.8.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/logging/log4j/log4j-api/2.8.2/log4j-api-2.8.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.logging.log4j:log4j-core:2.8.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/logging/log4j/log4j-core/2.8.2/log4j-core-2.8.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven.plugins:maven-compiler-plugin:maven-plugin:2.0.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/plugins/maven-compiler-plugin/2.0.2/maven-compiler-plugin-2.0.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven.plugins:maven-jar-plugin:maven-plugin:2.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/plugins/maven-jar-plugin/2.2/maven-jar-plugin-2.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven.wagon:wagon-provider-api:1.0-beta-2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-archiver:2.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-archiver/2.3/maven-archiver-2.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-artifact-manager:2.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-artifact:2.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-model:2.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-plugin-api:2.0.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-plugin-registry:2.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-profile:2.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-project:2.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-repository-metadata:2.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.maven:maven-settings:2.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.plexus:plexus-archiver:1.0-alpha-9.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/plexus/plexus-archiver/1.0-alpha-9/plexus-archiver-1.0-alpha-9.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.plexus:plexus-compiler-api:1.5.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.plexus:plexus-compiler-javac:1.5.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.plexus:plexus-compiler-manager:1.5.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.plexus:plexus-container-default:1.0-alpha-9-stable-1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.plexus:plexus-io:1.0-alpha-1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.plexus:plexus-utils:1.4.9.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.jar"/>
+  </path>
+  
+  
+  <!-- Application Server Libraries -->
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_mythtvguide.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.mythtvguide" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.mythtvguide" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.mythtvguide:jar" value="${basedir}/out/artifacts/mythtvguide_jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.mythtvguide.jar" value="${artifacts.temp.dir}/mythtvguide.jar"/>
+  </target>
+  
+  <target name="artifact.mythtvguide:jar" depends="init.artifacts, compile.module.mythtvguide" description="Build &#39;mythtvguide:jar&#39; artifact">
+    <property name="artifact.temp.output.mythtvguide:jar" value="${artifacts.temp.dir}/mythtvguide_jar"/>
+    <mkdir dir="${artifact.temp.output.mythtvguide:jar}"/>
+    <jar destfile="${temp.jar.path.mythtvguide.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${mythtvguide.output.dir}"/>
+      <zipfileset src="${path.variable.maven_repository}/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/ant/ant/1.7.1/ant-1.7.1.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/codehaus/plexus/plexus-io/1.0-alpha-1/plexus-io-1.0-alpha-1.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/plugins/maven-jar-plugin/2.2/maven-jar-plugin-2.2.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/plugins/maven-compiler-plugin/2.0.2/maven-compiler-plugin-2.0.2.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/net/sf/squirrel-sql/thirdparty-non-maven/ostermiller-syntax/1.1.1/ostermiller-syntax-1.1.1.jar"/>
+      <zipfileset src="${basedir}/../../../../usr/local/java/jdk1.8.0_121/lib/tools.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/codehaus/plexus/plexus-compiler-api/1.5.3/plexus-compiler-api-1.5.3.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-archiver/2.3/maven-archiver-2.3.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/net/sf/squirrel-sql/thirdparty-non-maven/ostermiller-bte/1.6/ostermiller-bte-1.6.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/logging/log4j/log4j-api/2.8.2/log4j-api-2.8.2.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/mysql/mysql-connector-java/5.1.37/mysql-connector-java-5.1.37.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/commons-lang/commons-lang/2.1/commons-lang-2.1.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/codehaus/plexus/plexus-archiver/1.0-alpha-9/plexus-archiver-1.0-alpha-9.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar"/>
+      <zipfileset src="${path.variable.maven_repository}/org/apache/logging/log4j/log4j-core/2.8.2/log4j-core-2.8.2.jar"/>
+    </jar>
+    <copy file="${temp.jar.path.mythtvguide.jar}" tofile="${artifact.temp.output.mythtvguide:jar}/mythtvguide.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.mythtvguide:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.mythtvguide:jar}"/>
+    <copy todir="${artifact.output.mythtvguide:jar}">
+      <fileset dir="${artifact.temp.output.mythtvguide:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
