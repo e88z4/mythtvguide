@@ -140,6 +140,14 @@ public interface IInputInfoFree extends IInputInfo, IVersionable, IPropertyAware
 
 		@MythParameterType(Boolean.class)
 		@MythProtoVersionAnnotation(from=PROTO_VERSION_87)
-		QUICK_TUNE
+		QUICK_TUNE,
+
+		@MythParameterType(Integer.class)
+		@MythProtoVersionAnnotation(from = PROTO_VERSION_90, to PROTO_VERSION_90)
+		RECCOUNT,
+
+		@MythParameterType(Integer.class)
+		@MythProtoVersionAnnotation(from = PROTO_VERSION_89, to = PROTO_VERSION_90)
+		REC_LIMIT,
 	}	
 }
