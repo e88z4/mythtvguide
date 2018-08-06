@@ -1864,6 +1864,24 @@ public enum ProtocolVersion implements IVersion {
 			{GIT_COMMIT,"a2676c2dd," + "20603add4"},
 			{MYTH_RELEASE,"0.28"}
 	}),
+
+	PROTO_VERSION_89(89,"BuzzKill", new String [][]{
+			{DATE,"2016-06-11"},
+			{GIT_COMMIT,"1f8c275b" + "b5594ccb"},
+			{MYTH_RELEASE,"0.28"}
+	}),
+
+	PROTO_VERSION_90(90,"BuzzCut", new String [][]{
+			{DATE,"2016-06-19"},
+			{GIT_COMMIT,"3e782bae"},
+			{MYTH_RELEASE,"0.28"}
+	}),
+
+	PROTO_VERSION_91(91,"BuzzOff", new String [][]{
+			{DATE,"2016-07-04"},
+			{GIT_COMMIT,"0cd367d7"},
+			{MYTH_RELEASE,"0.29"}
+	}),
 	
 	/**
 	 * MythTV Current Development Version.
