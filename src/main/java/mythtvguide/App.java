@@ -2,9 +2,13 @@ package mythtvguide;
 
 import org.apache.tools.ant.taskdefs.LogOutputStream;
 import org.jmythapi.IRecorderInfo;
+import org.jmythapi.database.impl.RecorderInfo;
 import org.jmythapi.protocol.*;
 import org.jmythapi.*;
+import org.jmythapi.protocol.impl.Recorder;
 import org.jmythapi.protocol.request.EPlaybackSockEventsMode;
+import org.jmythapi.protocol.response.IFreeInputInfo;
+import org.jmythapi.protocol.response.IFreeInputInfoList;
 import org.jmythapi.protocol.response.IFreeInputList;
 import org.jmythapi.protocol.response.IInputInfoFree;
 import org.jmythapi.protocol.events.IMythEvent;
@@ -58,28 +62,29 @@ public class App
 
         String server = properties.getProperty("server");
         int port = Integer.valueOf(properties.getProperty("port","6543"));
+        int timeout = Integer.valueOf(properties.getProperty("timeout", "5000"));
 
         IBackend mythBackend = BackendFactory.createBackend(server, port);
         mythBackend.connect();
         mythBackend.getCommandConnection().setMsgDebugOut(System.out);
 
-        mythBackend.addEventListener(IMythEvent.class,new IMythEventListener() {
-            public void fireEvent(IMythEvent event) {
-                logger.info(event);
-            }
-
-        });
+//        mythBackend.addEventListener(IMythEvent.class,new IMythEventListener() {
+//            public void fireEvent(IMythEvent event) {
+//                logger.info(event);
+//            }
+//
+//        });
 
         boolean result = mythBackend.annotatePlayback("mythtvclient", EPlaybackSockEventsMode.NONE);
-        IFreeInputList freeInputInfoList = mythBackend.getFreeInputInfo();
+        IFreeInputInfoList freeInputInfoList = mythBackend.getFreeInputInfo();
 
         if(!freeInputInfoList.asList().isEmpty())
         {
             IRecorder recorder = null;
-            for(IInputInfoFree freeInput : freeInputInfoList.asList())
+            for(IFreeInputInfo freeInput : freeInputInfoList.asList())
             {
                 logger.info("Checking free input " + freeInput.getDisplayName());
-                IRecorderInfo recorderInfo = mythBackend.getRecorderForNum(freeInput.getInputID());
+                IRecorderInfo recorderInfo = mythBackend.getRecorderForNum(freeInput.getInputId());
                 recorder = mythBackend.getRecorder(recorderInfo);
                 if(!recorder.isRecording()) {
                     logger.info(freeInput.getDisplayName() + " is currently free.");

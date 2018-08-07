@@ -45,7 +45,7 @@ import org.jmythapi.protocol.request.IMythCommand;
  * @see IMythCommand#QUERY_REMOTEENCODER_GET_FREE_INPUTS QUERY_REMOTEENCODER_GET_FREE_INPUTS
  * @see IMythCommand#QUERY_RECORDER_GET_FREE_INPUTS QUERY_RECORDER_GET_FREE_INPUTS
  */
-public interface IFreeInputList extends Iterable<IInputInfoFree>, IVersionable {
+public 	interface IFreeInputList extends Iterable<IInputInfoFree>, IVersionable {
 
 	/**
 	 * Gets the free-inputs as list

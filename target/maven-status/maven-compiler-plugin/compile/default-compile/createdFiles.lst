@@ -103,6 +103,7 @@ org/jmythapi/protocol/impl/Recorder$1.class
 org/jmythapi/protocol/events/impl/AMythEvent.class
 org/jmythapi/upnp/UpnpUtil.class
 org/jmythapi/database/IJobType$Type.class
+org/jmythapi/protocol/response/impl/FreeInputInfoList$Props.class
 org/jmythapi/protocol/response/ILoad$Props.class
 org/jmythapi/protocol/response/impl/Uptime.class
 org/jmythapi/protocol/response/IStorageGroupFileList.class
@@ -133,6 +134,7 @@ org/jmythapi/protocol/events/IShutdownCountdown$Props.class
 org/jmythapi/protocol/response/impl/filters/EnumGroupFilter.class
 org/jmythapi/protocol/IBackendConnection.class
 org/jmythapi/protocol/response/impl/ProgramRecordingType.class
+org/jmythapi/protocol/response/IFreeInputInfo.class
 org/jmythapi/protocol/response/impl/ProgramVideoProperties.class
 org/jmythapi/protocol/response/IProgramAudioProperties.class
 org/jmythapi/protocol/response/IProgramRecordingFilters$Filters.class
@@ -303,6 +305,7 @@ org/jmythapi/protocol/response/impl/MemStats.class
 org/jmythapi/protocol/request/EPlaybackSockEventsMode.class
 org/jmythapi/protocol/response/IRecorderChannelPrefixStatus$Props.class
 org/jmythapi/protocol/response/IProgramSubtitleType$Flags.class
+org/jmythapi/protocol/response/impl/FreeInputInfoList.class
 org/jmythapi/protocol/events/IRecordingEvent.class
 org/jmythapi/protocol/response/impl/FreeSpaceSummary.class
 org/jmythapi/database/impl/StorageGroupDirectory.class
@@ -327,12 +330,12 @@ org/jmythapi/protocol/ProtocolVersionRange.class
 org/jmythapi/protocol/response/IRecordingsExpiring$Props.class
 org/jmythapi/protocol/response/IRecordingsConflicting$Props.class
 org/jmythapi/protocol/response/impl/RecordingsExpiring.class
-mythtvguide/App$1.class
 org/jmythapi/protocol/response/impl/filters/FlagGroupFilter.class
 org/jmythapi/protocol/impl/Backend.class
 org/jmythapi/protocol/events/impl/UpdateProgInfo.class
 org/jmythapi/protocol/response/IGroupValueChangedCallback.class
 org/jmythapi/protocol/response/impl/filters/ProgramInfoStorageGroupFilter.class
+org/jmythapi/protocol/response/impl/FreeInputInfo.class
 org/jmythapi/protocol/response/impl/filters/ProgramInfoRecordingIdFilter.class
 org/jmythapi/protocol/response/IRemoteEncoderFlags.class
 org/jmythapi/protocol/impl/Backend$3.class
@@ -385,7 +388,9 @@ org/jmythapi/protocol/response/IProgramAudioProperties$Flags.class
 org/jmythapi/protocol/events/impl/VideoListChange$VideoChange.class
 org/jmythapi/database/IJobQueue.class
 org/jmythapi/protocol/events/impl/ResetIdleTime.class
+org/jmythapi/protocol/response/IFreeInputInfo$Props.class
 org/jmythapi/protocol/events/IMythEventPacketListener.class
+org/jmythapi/protocol/response/IFreeInputInfoList.class
 org/jmythapi/protocol/response/IInputInfo.class
 org/jmythapi/protocol/response/IFlag.class
 org/jmythapi/protocol/events/IVideoListChange$Props.class

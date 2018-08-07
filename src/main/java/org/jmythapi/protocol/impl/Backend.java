@@ -2959,11 +2959,11 @@ public class Backend implements IVersionable, Closeable, IBackend, IMythEventPac
 		return resp.getPacketArgsLength() > 0 && resp.getPacketArg(0).equals("0");		
 	}
 
-	public IFreeInputList getFreeInputInfo() throws IOException {
+	public IFreeInputInfoList getFreeInputInfo() throws IOException {
 		return getFreeInputInfo(0);
 	}
 
-	public IFreeInputList getFreeInputInfo(int excluded_input) throws IOException {
+	public IFreeInputInfoList getFreeInputInfo(int excluded_input) throws IOException {
 		this.cmdConnection.writeMessage(new AMythRequest(
 				new AMythCommand(
 						this.protoVersion,
@@ -2975,7 +2975,7 @@ public class Backend implements IVersionable, Closeable, IBackend, IMythEventPac
 		final IMythPacket resp = this.cmdConnection.readPacket();
 		//final ProgramInfoList recordings = ResponseUtils.readFrom(ProgramInfoList.class, resp);
 		//if(recordings.isEmpty()) return recordings;
-		final FreeInputsList inputsList = ResponseUtils.readFrom(FreeInputsList.class,resp);
+		final FreeInputInfoList inputsList = ResponseUtils.readFrom(FreeInputInfoList.class,resp);
 		return inputsList;
 	}
 

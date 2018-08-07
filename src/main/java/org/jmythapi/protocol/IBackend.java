@@ -3978,10 +3978,10 @@ public interface IBackend extends Closeable {
 	public boolean queueTranscodeStop(IProgramInfo recording) throws IOException;
 
 	@MythProtoVersionAnnotation(from=PROTO_VERSION_87)
-	public IFreeInputList getFreeInputInfo() throws IOException;
+	public IFreeInputInfoList getFreeInputInfo() throws IOException;
 
 	@MythProtoVersionAnnotation(from=PROTO_VERSION_87)
-	public IFreeInputList getFreeInputInfo(int excluded_input) throws IOException;
+	public IFreeInputInfoList getFreeInputInfo(int excluded_input) throws IOException;
 	
 	/**
 	 * Registers a new event listener.
