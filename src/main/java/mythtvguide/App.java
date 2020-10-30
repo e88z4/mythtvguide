@@ -67,15 +67,9 @@ public class App
         IBackend mythBackend = BackendFactory.createBackend(server, port);
         mythBackend.connect();
         mythBackend.getCommandConnection().setMsgDebugOut(System.out);
+       
 
-//        mythBackend.addEventListener(IMythEvent.class,new IMythEventListener() {
-//            public void fireEvent(IMythEvent event) {
-//                logger.info(event);
-//            }
-//
-//        });
-
-        boolean result = mythBackend.annotatePlayback("mythtvclient", EPlaybackSockEventsMode.NONE);
+        boolean result = mythBackend.annotatePlayback("mythtvguide", EPlaybackSockEventsMode.NONE);
         IFreeInputInfoList freeInputInfoList = mythBackend.getFreeInputInfo();
 
         if(!freeInputInfoList.asList().isEmpty())
