@@ -92,7 +92,7 @@ public class App
                 }
             }
 
-            List<IRecorderChannelInfo> channelInfoList = mythBackend.getChannelInfos();
+            List<IRecorderChannelInfo> channelInfoList = mythBackend.getChannelInfos();            
 
             if(recorder != null)
             {
@@ -102,7 +102,7 @@ public class App
                     if(recorder.spawnLiveTV(pictureInPicture, channelInfo.getChannelNumber()))
                     {
                         try {
-                            recorder.waitForIsRecording(5000);
+                            recorder.waitForIsRecording(Integer.valueOf(properties.getProperty("timeout","5000")));
                             sleep(Integer.valueOf(properties.getProperty("watchingTime","5000")));
                             logger.info("Watching channel " + channelInfo.getChannelName());
                         }
