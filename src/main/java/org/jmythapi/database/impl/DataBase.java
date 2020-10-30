@@ -63,7 +63,7 @@ import org.jmythapi.protocol.response.IRecorderNextProgramInfo;
 import org.jmythapi.protocol.utils.PropertyAwareUtils;
 import org.jmythapi.utils.EncodingUtils;
 
-import com.mysql.jdbc.Statement;
+import java.sql.Statement;
 
 /**
  * TODO: database versions are stored in: mythtv/libs/libmythtv/dbcheck.cpp
